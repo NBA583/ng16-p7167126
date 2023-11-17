@@ -1,0 +1,27 @@
+<h3 align="center">Working with Custom Pipes in Angular</h3>
+<hr/>
+
+Select Department No:
+<select [(ngModel)]="deptno">
+    <option value="10">Accounts</option>
+    <option value="20">Sales</option>
+    <option value="30">Marketing</option>
+    <option value="40">Finance</option>
+    <option value="-1">All Departments</option>
+</select>
+<hr/>
+
+<table border="2" cellspacing="0" width="600" >
+    <tr>
+        <th>Employee Number</th>
+        <th>Employee Name</th>
+        <th>Employee Job</th>
+        <th>Employee Dept.No</th>
+    </tr>
+    <tr *ngFor="let emp of empsArray | deptfilter: deptno">
+        <td>{{emp.empno}}</td>
+        <td>{{emp.ename}}</td>
+        <td>{{emp.job}}</td>
+        <td>{{emp.deptno}}</td>
+    </tr>
+</table>

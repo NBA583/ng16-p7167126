@@ -1,0 +1,25 @@
+<h3 align="center">Processing Employee Details using Salary Range</h3>
+<hr/>
+
+Salary filter Property: Min Value: <input type="text" [(ngModel)]="min"> Max Value: <input type="text" [(ngModel)]="max"> <br><br>
+hint: Min value = 900, Max value = 4000
+
+<div align="center" ><button type="button" (click)="getData()" >Get Data</button></div> <br>
+<hr/>
+
+<table border="2" cellspacing="0" width="600" >
+    <tr>
+        <th>Employee Number</th>
+        <th>Employee Name</th>
+        <th>Employee Job</th>
+        <th>Employee Salary</th>
+        <th>Employee Dept.No</th>
+    </tr>
+    <tr *ngFor="let emp of empsArray | filter:minRange:maxRange">
+        <td>{{emp.empno}}</td>
+        <td>{{emp.ename}}</td>
+        <td>{{emp.job}}</td>
+        <td>{{emp.salary}}</td>
+        <td>{{emp.deptno}}</td>
+    </tr>
+</table>

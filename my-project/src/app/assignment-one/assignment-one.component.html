@@ -1,0 +1,15 @@
+<h3>Custom Pipes in Angular </h3>
+<hr/>
+<h2>User Name: Scott</h2>
+<h2>User Gender: <img src="../assets/male.png" srcset="" width="40" height="40"></h2>
+<hr/>
+<table border="2" width="250" >
+  <tr>
+    <th>User Name</th>
+    <th>User Gender</th>
+  </tr>
+  <tr *ngFor="let emp of EmpArray">
+    <td>{{emp.name}}</td>
+    <td> <img src="../assets/{{emp.gender | gender}}" srcset="" width="40" height="40"> </td>
+  </tr>
+</table>
